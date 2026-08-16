@@ -22,40 +22,40 @@ Create a room, share the link, and code together instantly. No sign-up required.
 
 ```mermaid
 flowchart LR
+    classDef frontend fill:#61dafb,color:#000,stroke:#333;
+    classDef backend fill:#3178c6,color:#fff,stroke:#333;
+    classDef external fill:#f5f5f5,stroke:#666;
 
-    %% Users
     U[👥 Users]
 
-    %% Vercel
-    subgraph V[Vercel]
-        direction TB
-
-        subgraph N[Next.js]
+    subgraph Vercel
+        subgraph "Next.js"
             direction LR
 
-            subgraph FE[Frontend]
-                React["React"]
-                TS1["TypeScript"]
+            subgraph Frontend
+                React["⚛ React"]
+                FTS["TypeScript"]
             end
 
-            subgraph BE["Backend (Serverless)"]
-                TS2["TypeScript"]
+            subgraph "Backend (Serverless)"
+                BTS["TypeScript"]
             end
 
-            FE -- REST --> BE
+            Frontend -->|REST| Backend
         end
     end
 
-    %% External Services
-    R[Runlet]
-    S["Supabase + Yjs<br/>Presence & Broadcast"]
+    Runlet["Runlet"]
+    Supabase["Supabase + Yjs<br/>Presence & Broadcast"]
 
-    %% Connections
-    U -- HTTPS --> FE
-    BE -- "Code Execution (REST API)" --> R
-    FE <-- WebSockets --> S
+    U -->|HTTPS| Frontend
+    Backend -->|"Code Execution (REST API)"| Runlet
+    Frontend <-->|WebSockets| Supabase
+
+    class React,FTS frontend
+    class BTS backend
+    class Runlet,Supabase external
 ```
-
 The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
 
 Code execution is handled through a Next.js API route that securely proxies execution requests to the **Runlet** service. The project initially used **JDoodle** before migrating to **Runlet**, providing complete control over the execution environment while exploring secure remote code execution.
