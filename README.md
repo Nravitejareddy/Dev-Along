@@ -22,39 +22,65 @@ Create a room, share the link, and code together instantly. No sign-up required.
 
 ```mermaid
 flowchart LR
-    classDef frontend fill:#61dafb,color:#000,stroke:#333;
-    classDef backend fill:#3178c6,color:#fff,stroke:#333;
-    classDef external fill:#f5f5f5,stroke:#666;
 
-    U[👥 Users]
+%% =========================
+%% Nodes
+%% =========================
+U([👥 Users])
 
-    subgraph Vercel
-        subgraph "Next.js"
-            direction LR
+subgraph V["🚀 Vercel"]
+direction TB
 
-            subgraph Frontend
-                React["⚛ React"]
-                FTS["TypeScript"]
-            end
+    subgraph N["Next.js"]
+    direction LR
 
-            subgraph "Backend (Serverless)"
-                BTS["TypeScript"]
-            end
-
-            Frontend -->|REST| Backend
+        subgraph FE["🎨 Frontend"]
+        direction TB
+            React["⚛️ React"]
+            TS1["📘 TypeScript"]
         end
+
+        subgraph BE["⚙️ Backend<br/>(Serverless)"]
+        direction TB
+            TS2["📘 TypeScript"]
+        end
+
+        FE -->|REST API| BE
     end
+end
 
-    Runlet["Runlet"]
-    Supabase["Supabase + Yjs<br/>Presence & Broadcast"]
+Runlet["💻 Runlet"]
+Supabase["🟢 Supabase<br/>➕<br/>🟡 Yjs<br/><br/>Presence & Broadcast"]
 
-    U -->|HTTPS| Frontend
-    Backend -->|"Code Execution (REST API)"| Runlet
-    Frontend <-->|WebSockets| Supabase
+%% =========================
+%% Connections
+%% =========================
+U -->|HTTPS| FE
+BE -->|"Code Execution"| Runlet
+FE <-->|WebSockets| Supabase
 
-    class React,FTS frontend
-    class BTS backend
-    class Runlet,Supabase external
+%% =========================
+%% Styles
+%% =========================
+
+style V fill:#000000,stroke:#000000,color:#ffffff,stroke-width:3px
+style N fill:#ffffff,stroke:#111827,stroke-width:2px
+
+style FE fill:#E0F2FE,stroke:#0EA5E9,stroke-width:2px
+style BE fill:#DBEAFE,stroke:#2563EB,stroke-width:2px
+
+style React fill:#61DAFB,stroke:#0F172A,color:#000
+style TS1 fill:#3178C6,stroke:#1E3A8A,color:#fff
+style TS2 fill:#3178C6,stroke:#1E3A8A,color:#fff
+
+style Runlet fill:#111827,color:#ffffff,stroke:#000000,stroke-width:2px
+style Supabase fill:#DCFCE7,stroke:#16A34A,stroke-width:2px
+
+style U fill:#FEF3C7,stroke:#F59E0B,stroke-width:2px
+
+linkStyle 0 stroke:#F59E0B,stroke-width:2px
+linkStyle 1 stroke:#2563EB,stroke-width:2px
+linkStyle 2 stroke:#16A34A,stroke-width:2px
 ```
 The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
 
