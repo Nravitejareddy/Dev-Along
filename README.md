@@ -1,4 +1,3 @@
-````md
 # 🚀 Dev Along
 ### Real-Time Collaborative Coding Platform
 
