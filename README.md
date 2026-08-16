@@ -20,7 +20,41 @@ Create a room, share the link, and code together instantly. No sign-up required.
 
 # 🏗 System Architecture
 
-![Architecture](public/architecture.png)
+```mermaid
+flowchart LR
+
+    %% Users
+    U[👥 Users]
+
+    %% Vercel
+    subgraph V[Vercel]
+        direction TB
+
+        subgraph N[Next.js]
+            direction LR
+
+            subgraph FE[Frontend]
+                React["React"]
+                TS1["TypeScript"]
+            end
+
+            subgraph BE["Backend (Serverless)"]
+                TS2["TypeScript"]
+            end
+
+            FE -- REST --> BE
+        end
+    end
+
+    %% External Services
+    R[Runlet]
+    S["Supabase + Yjs<br/>Presence & Broadcast"]
+
+    %% Connections
+    U -- HTTPS --> FE
+    BE -- "Code Execution (REST API)" --> R
+    FE <-- WebSockets --> S
+```
 
 The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
 
