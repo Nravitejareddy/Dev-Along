@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="180" viewBox="0 0 640 180">
+  <!-- black base -->
+  <rect x="30" y="40" width="580" height="120" rx="14" fill="#101010"/>
+
+  <!-- blue code bg -->
+  <rect x="46" y="54" width="548" height="52" rx="9" fill="#CBE6FF"/>
+
+  <!-- // Dev-along -->
+  <text x="62" y="89" font-family="Consolas, monospace" font-size="34" font-weight="700" fill="#4E7A4A">// Dev-along</text>
+
+  <!-- made easy -->
+  <text x="46" y="137" font-family="Consolas, monospace" font-size="30" fill="#5B8BFF">made easy</text>
+
+  <!-- wavy -->
+  <path d="M 46 145 q 3 5 6 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0 t 12 0"
+        fill="none" stroke="#8E1A1A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- purple caret -->
+  <rect x="272" y="108" width="3" height="38" fill="#C4B5FD"/>
+
+  <!-- DANIEL - now fully INSIDE svg, inside black box top-left -->
+  <g transform="translate(48,14)">
+    <!-- small black triangle with white outline -->
+    <path d="M 0 0 L 0 18 L 12 9 Z" fill="#1E1E1E" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+    <g transform="translate(18,-6)">
+      <rect x="0" y="0" width="54" height="18" rx="9" fill="#FDD8E5" stroke="#101010" stroke-width="0.6"/>
+      <text x="27" y="12" text-anchor="middle" font-family="Arial" font-size="10" fill="#111">Daniel</text>
+    </g>
+  </g>
+
+  <!-- JOSHUA -->
+  <g transform="translate(534,34)">
+    <rect x="0" y="0" width="58" height="22" rx="5" fill="#B8D9FF" stroke="#101010" stroke-width="0.6"/>
+    <text x="29" y="14" text-anchor="middle" font-family="Arial" font-size="10.5" fill="#111">Joshua</text>
+    <rect x="10" y="20" width="2" height="38" fill="#B8D9FF" stroke="#101010" stroke-width="0.4"/>
+  </g>
+
+  <!-- AARON -->
+  <g transform="translate(276,98)">
+    <rect x="0" y="0" width="40" height="14" rx="4" fill="#DDD0FF" stroke="#101010" stroke-width="0.5"/>
+    <text x="20" y="10" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#111">Aaron</text>
+  </g>
+
+  <!-- PEARSON + white cursor - inside -->
+  <g transform="translate(540,110)">
+    <path d="M 0 0 L 0 20 L 8 15 L 11 24 L 16 23 L 13 14 L 25 10 Z" fill="white" stroke="#101010" stroke-width="1" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(468,136)">
+    <rect x="0" y="0" width="58" height="20" rx="10" fill="#BBF0C8" stroke="#101010" stroke-width="0.6"/>
+    <text x="29" y="13" text-anchor="middle" font-family="Arial" font-size="10" fill="#111">Pearson</text>
+  </g>
+</svg>
