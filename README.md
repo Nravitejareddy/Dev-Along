@@ -23,49 +23,69 @@ Create a room, share the link, and code together instantly. No sign-up required.
 ```mermaid
 flowchart LR
 
-user([Users])
+%% -------------------- USERS --------------------
+Users([👥 Users])
 
-subgraph vercel["▲ Vercel"]
-    direction LR
+%% -------------------- VERCEL --------------------
+subgraph V["▲ Vercel"]
+direction TB
 
-    subgraph next["Next.js"]
+    subgraph Next["Next.js App"]
 
         direction LR
 
-        subgraph frontend["Frontend"]
-            react["⚛️ React"]
-            tsf["TypeScript"]
+        subgraph Frontend["🎨 Frontend"]
+            direction TB
+            React["⚛️ React"]
+            TSF["📘 TypeScript"]
         end
 
-        subgraph backend["Backend<br/>(Serverless)"]
-            tsb["TypeScript"]
+        subgraph Backend["⚙️ Backend<br/>(Serverless Functions)"]
+            direction TB
+            TSB["📘 TypeScript API"]
         end
 
-        frontend -->|REST| backend
+        Frontend -->|REST API| Backend
 
     end
+
 end
 
-supabase["Supabase<br/>+<br/>Yjs"]
+%% -------------------- SERVICES --------------------
 
-runlet["Runlet"]
+Realtime["🟢 Supabase<br/>⚡ Presence<br/>🟡 Yjs Broadcast"]
 
-user -->|HTTPS| frontend
+Runlet["💻 Runlet<br/>Remote Code Execution"]
 
-frontend <-->|WebSockets| supabase
+%% -------------------- CONNECTIONS --------------------
 
-backend -->|"Code Execution (REST API)"| runlet
+Users -->|HTTPS| Frontend
 
-style vercel fill:#111827,stroke:#000,color:#fff,stroke-width:3px
-style next fill:#ffffff,stroke:#555,stroke-width:2px
+Frontend <-->|WebSockets| Realtime
 
-style frontend fill:#E3F2FD,stroke:#2196F3,stroke-width:2px
-style backend fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px
+Backend -->|"REST API<br/>Execute Code"| Runlet
 
-style supabase fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
-style runlet fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
+%% -------------------- COLORS --------------------
 
-style user fill:#FFFDE7,stroke:#555,stroke-width:2px
+style V fill:#111827,stroke:#000,stroke-width:4px,color:#ffffff
+style Next fill:#ffffff,stroke:#64748b,stroke-width:2px
+
+style Frontend fill:#dbeafe,stroke:#2563eb,stroke-width:3px
+style Backend fill:#fef3c7,stroke:#f59e0b,stroke-width:3px
+
+style Users fill:#ecfccb,stroke:#65a30d,stroke-width:2px
+
+style Realtime fill:#dcfce7,stroke:#16a34a,stroke-width:3px
+
+style Runlet fill:#ede9fe,stroke:#7c3aed,stroke-width:3px
+
+style React fill:#ffffff,stroke:#61dafb,stroke-width:2px
+style TSF fill:#3178C6,color:#fff,stroke:#1e3a8a,stroke-width:2px
+style TSB fill:#3178C6,color:#fff,stroke:#1e3a8a,stroke-width:2px
+
+linkStyle 0 stroke:#2563eb,stroke-width:2px
+linkStyle 1 stroke:#16a34a,stroke-width:2px
+linkStyle 2 stroke:#f97316,stroke-width:2px
 ```
 The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
 
