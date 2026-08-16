@@ -237,52 +237,6 @@ http://localhost:3000
 
 ---
 
-# 📈 Future Roadmap
-
-- 📁 Multi-file project support
-- 👤 User authentication and profiles
-- 💾 Persistent coding history
-- 🎥 Live video collaboration
-- 🎙 Voice chat during coding sessions
-- 🐳 Docker-based execution environments
-- 📄 Collaborative whiteboard and notes
-- 🌍 Additional programming language support
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository.
-2. Create a feature branch.
-
-```bash
-git checkout -b feature/your-feature
-```
-
-3. Commit your changes.
-
-```bash
-git commit -m "Add amazing feature"
-```
-
-4. Push your branch.
-
-```bash
-git push origin feature/your-feature
-```
-
-5. Open a Pull Request.
-
----
-
-# 📄 License
-
-This project is licensed under the **MIT License**. See the **LICENSE** file for more information.
-
----
-
 # 👨‍💻 Author
 
 **Ravi Teja Reddy N**
