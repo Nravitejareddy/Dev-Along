@@ -1,5 +1,5 @@
 /*
-In production, this route is rate-limited to 10 requests per minute per IP address 
+In production, this route is rate-limited to 10 requests per minute per IP address
 through Vercel's Firewall rules.
 */
 
@@ -109,6 +109,7 @@ export async function POST(request: Request) {
                 { status: 504 },
             );
         }
+
         return NextResponse.json<ApiErrorResponse>(
             { error: "Failed to reach the compiler service" },
             { status: 502 },
