@@ -297,7 +297,6 @@ Computer Science & Engineering Graduate
 
 > ✅ **Live and actively maintained** — Dev Along is fully functional and continues to evolve with new collaboration features and platform improvements.
 
----
 
 > **Dev Along — Code Together. Learn Together. Build Together.**
 ````
