@@ -1,22 +1,35 @@
-![Dev Along](public/readme-header.png)
+````md
+# 🚀 Dev Along
+### Real-Time Collaborative Coding Platform
 
-Create a room, share the link, and code together instantly. No sign-up required. Perfect for pair programming, technical interviews, collaborative learning, and mentoring sessions. Supports Python, JavaScript, C++, and Java.
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?logo=typescript)
+![React](https://img.shields.io/badge/UI-React-61DAFB?logo=react)
+![Supabase](https://img.shields.io/badge/Database-Supabase-3ECF8E?logo=supabase)
+![Yjs](https://img.shields.io/badge/Realtime-Yjs-blue)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen)
 
-**🌐 Live Demo:** https://devalong.live
+Create a room, share the link, and code together instantly. No sign-up required. Dev Along is a browser-based collaborative coding platform designed for pair programming, technical interviews, mentoring sessions, and collaborative learning. It supports Python, JavaScript, C++, and Java with real-time synchronization and integrated code execution.
 
 ---
 
-# Architecture
+# 🌐 Live Demo
+
+**https://dev-along.vercel.app/**
+
+---
+
+# 🏗 System Architecture
 
 ![Architecture](public/architecture.png)
 
-The entire application is built with the [Next.js](https://nextjs.org/) framework and deployed on Vercel. Real-time collaboration is powered by [Yjs](https://yjs.dev/), using [y-supabase](https://github.com/supabase-community/y-supabase) as the synchronization provider to keep editor state synchronized through Supabase Realtime.
+The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
 
-Code execution is handled through a Next.js API route that proxies requests to the [Runlet](https://github.com/GiridharRNair/Runlet) execution service. The project originally relied on [JDoodle](https://www.jdoodle.com/) for running code but was later migrated to Runlet to gain full control over the execution environment while learning how to build a secure code execution service.
+Code execution is handled through a Next.js API route that securely proxies execution requests to the **Runlet** service. The project initially used **JDoodle** before migrating to **Runlet**, providing complete control over the execution environment while exploring secure remote code execution.
 
 ---
 
-# Features
+# ✨ Key Highlights
 
 - 🚀 Instant collaborative coding
 - 👥 Real-time multiplayer editor
@@ -29,7 +42,7 @@ Code execution is handled through a Next.js API route that proxies requests to t
 
 ---
 
-# Tech Stack
+# 🛠 Technology Stack
 
 | Category | Technology |
 |----------|------------|
@@ -46,47 +59,7 @@ Code execution is handled through a Next.js API route that proxies requests to t
 
 ---
 
-# Local Development
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+
-- A [Supabase](https://supabase.com/) project
-
-## Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Nravitejareddy/Dev-Along.git
-cd Dev-Along
-npm install
-```
-
-### 2. Configure environment variables
-
-Create a `.env.local` file in the project root.
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://<your-supabase-project>.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<your-supabase-publishable-key>
-```
-
-### 3. Start the development server
-
-```bash
-npm run dev
-```
-
-Open your browser and visit:
-
-```text
-http://localhost:3000
-```
-
----
-
-# Project Structure
+# 📂 Repository Structure
 
 ```text
 .
@@ -95,8 +68,7 @@ http://localhost:3000
 ├── hooks/
 ├── lib/
 ├── public/
-│   ├── architecture.png
-│   └── readme-header.png
+│   └── architecture.png
 ├── styles/
 ├── types/
 ├── utils/
@@ -106,33 +78,162 @@ http://localhost:3000
 
 ---
 
-# Contributing
+# 💻 Modules
+
+## 🌐 Frontend
+
+> **Description**  
+> Built with Next.js and React, the frontend provides a responsive Monaco-based code editor, language selection, room sharing, and seamless collaboration directly in the browser.
+
+> **Tech Stack**  
+> Next.js • React • TypeScript • Monaco Editor
+
+---
+
+## 🔄 Real-Time Collaboration
+
+> **Description**  
+> Uses Yjs together with y-supabase to synchronize editor content, cursor positions, and document updates instantly between connected users through Supabase Realtime.
+
+> **Tech Stack**  
+> Yjs • y-supabase • Supabase Realtime
+
+---
+
+## ⚙ Backend API
+
+> **Description**  
+> Next.js API routes securely proxy execution requests to the remote execution service while keeping sensitive execution logic isolated from the client.
+
+> **Tech Stack**  
+> Next.js API Routes • TypeScript
+
+---
+
+## ▶ Code Execution
+
+> **Description**  
+> Source code is executed through the Runlet execution service, supporting multiple programming languages in a secure remote environment.
+
+> **Supported Languages**  
+> Python • JavaScript • C++ • Java
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Nravitejareddy/Dev-Along.git
+
+cd Dev-Along
+```
+
+---
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3. Configure Environment Variables
+
+Create a `.env.local` file in the project root.
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+```
+
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
+
+---
+
+## 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# 📈 Future Roadmap
+
+- 📁 Multi-file project support
+- 👤 User authentication and profiles
+- 💾 Persistent coding history
+- 🎥 Live video collaboration
+- 🎙 Voice chat during coding sessions
+- 🐳 Docker-based execution environments
+- 📄 Collaborative whiteboard and notes
+- 🌍 Additional programming language support
+
+---
+
+# 🤝 Contributing
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a feature branch
+1. Fork the repository.
+2. Create a feature branch.
 
 ```bash
 git checkout -b feature/your-feature
 ```
 
-3. Commit your changes
+3. Commit your changes.
 
 ```bash
 git commit -m "Add amazing feature"
 ```
 
-4. Push to GitHub
+4. Push your branch.
 
 ```bash
 git push origin feature/your-feature
 ```
 
-5. Open a Pull Request
+5. Open a Pull Request.
 
 ---
 
-# License
+# 📄 License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the **MIT License**. See the **LICENSE** file for more information.
+
+---
+
+# 👨‍💻 Author
+
+**Ravi Teja Reddy N**
+
+Computer Science & Engineering Graduate
+
+🐙 GitHub: https://github.com/Nravitejareddy
+
+---
+
+# ⭐ Project Status
+
+> ✅ **Live and actively maintained** — Dev Along is fully functional and continues to evolve with new collaboration features and platform improvements.
+
+---
+
+> **Dev Along — Code Together. Learn Together. Build Together.**
+````
