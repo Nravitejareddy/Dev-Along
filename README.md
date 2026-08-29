@@ -143,3 +143,105 @@ Code execution is handled through a Next.js API route that securely proxies exec
 ├── package.json
 └── README.md
 ```
+## 💻 Modules
+
+### 🌐 Frontend
+
+**Description**  
+*Built with Next.js and React, the frontend provides a responsive Monaco-based code editor, language selection, room sharing, and seamless collaboration directly in the browser.*
+
+**Tech Stack**  
+*Next.js • React • TypeScript • Monaco Editor*
+
+---
+
+### 🔄 Real-Time Collaboration
+
+**Description**  
+*Uses Yjs together with y-supabase to synchronize editor content, cursor positions, and document updates instantly between connected users through Supabase Realtime.*
+
+**Tech Stack**  
+*Yjs • y-supabase • Supabase Realtime*
+
+---
+
+### ⚙️ Backend API
+
+**Description**  
+*Next.js API routes securely proxy execution requests to the remote execution service while keeping sensitive execution logic isolated from the client.*
+
+**Tech Stack**  
+*Next.js API Routes • TypeScript*
+
+---
+
+### ▶️ Code Execution
+
+**Description**  
+*Source code is executed through the Runlet execution service, supporting multiple programming languages in a secure remote environment.*
+
+**Supported Languages**
+
+- Python
+- JavaScript
+- C++
+- Java
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Nravitejareddy/Dev-Along.git
+cd Dev-Along
+```
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+## 3. Configure Environment Variables
+
+Create a `.env.local` file in the project root.
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+```
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
+
+## 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# 👨‍💻 Author
+
+**Ravi Teja Reddy N**
+
+🐙 **GitHub:** https://github.com/Nravitejareddy
+
+---
+
+# ⭐ Project Status
+
+> ✅ **Live and actively maintained** — Dev Along is fully functional and continues to evolve with new collaboration features and platform improvements.
+
+> **Dev Along — Code Together. Learn Together. Build Together.**
