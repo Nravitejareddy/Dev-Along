@@ -12,13 +12,17 @@ Create a room, share the link, and code together instantly. No sign-up required.
 
 ---
 
-# 🌐 Live Demo
+### 🌐 Live Demo
 
 **https://dev-along.vercel.app/**
 
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/cb5caf6a-aa3a-4447-b0da-2758f0d4198f" width="100%" autoplay loop muted controls playsinline></video>
+</p>
+
 ---
 
-# 🏗 System Architecture
+### 🏗 System Architecture
 
 ```mermaid
 flowchart LR
@@ -36,11 +40,11 @@ direction TB
 
         subgraph Frontend["🎨 Frontend"]
             direction TB
-            React["⚛️ React"]
+            React["⚛ React"]
             TSF["📘 TypeScript"]
         end
 
-        subgraph Backend["⚙️ Backend<br/>(Serverless Functions)"]
+        subgraph Backend["⚙ Backend<br/>(Serverless Functions)"]
             direction TB
             TSB["📘 TypeScript API"]
         end
@@ -86,170 +90,3 @@ style TSB fill:#3178C6,color:#fff,stroke:#1e3a8a,stroke-width:2px
 linkStyle 0 stroke:#2563eb,stroke-width:2px
 linkStyle 1 stroke:#16a34a,stroke-width:2px
 linkStyle 2 stroke:#f97316,stroke-width:2px
-```
-The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
-
-Code execution is handled through a Next.js API route that securely proxies execution requests to the **Runlet** service. The project initially used **JDoodle** before migrating to **Runlet**, providing complete control over the execution environment while exploring secure remote code execution.
-
----
-
-# ✨ Key Highlights
-
-- 🚀 Instant collaborative coding
-- 👥 Real-time multiplayer editor
-- ✍️ Live cursor synchronization
-- ▶️ Execute code directly from the browser
-- 🔗 Share coding rooms with a single link
-- 💻 Supports Python, JavaScript, C++, and Java
-- ⚡ Powered by Next.js, Yjs, Supabase, and Runlet
-- 🔒 No authentication required
-
----
-
-# 🛠 Technology Stack
-
-| Category | Technology |
-|----------|------------|
-| Framework | Next.js |
-| Language | TypeScript |
-| UI | React |
-| Code Editor | Monaco Editor |
-| Collaboration | Yjs |
-| Sync Provider | y-supabase |
-| Backend | Next.js API Routes |
-| Database & Realtime | Supabase |
-| Code Execution | Runlet |
-| Deployment | Vercel |
-
----
-
-# 📂 Repository Structure
-
-```text
-.
-├── app/
-├── components/
-├── hooks/
-├── lib/
-├── public/
-│   └── architecture.png
-├── styles/
-├── types/
-├── utils/
-├── package.json
-└── README.md
-```
-
----
-
-# 💻 Modules
-
-## 🌐 Frontend
-
-> **Description**  
-> Built with Next.js and React, the frontend provides a responsive Monaco-based code editor, language selection, room sharing, and seamless collaboration directly in the browser.
-
-> **Tech Stack**  
-> Next.js • React • TypeScript • Monaco Editor
-
----
-
-## 🔄 Real-Time Collaboration
-
-> **Description**  
-> Uses Yjs together with y-supabase to synchronize editor content, cursor positions, and document updates instantly between connected users through Supabase Realtime.
-
-> **Tech Stack**  
-> Yjs • y-supabase • Supabase Realtime
-
----
-
-## ⚙ Backend API
-
-> **Description**  
-> Next.js API routes securely proxy execution requests to the remote execution service while keeping sensitive execution logic isolated from the client.
-
-> **Tech Stack**  
-> Next.js API Routes • TypeScript
-
----
-
-## ▶ Code Execution
-
-> **Description**  
-> Source code is executed through the Runlet execution service, supporting multiple programming languages in a secure remote environment.
-
-> **Supported Languages**  
-> Python • JavaScript • C++ • Java
-
----
-
-# 🚀 Getting Started
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/Nravitejareddy/Dev-Along.git
-
-cd Dev-Along
-```
-
----
-
-## 2. Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-## 3. Configure Environment Variables
-
-Create a `.env.local` file in the project root.
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
-```
-
-### Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
-
----
-
-## 4. Start the Development Server
-
-```bash
-npm run dev
-```
-
-Open your browser:
-
-```text
-http://localhost:3000
-```
-
----
-
-# 👨‍💻 Author
-
-**Ravi Teja Reddy N**
-
-Computer Science & Engineering Graduate
-
-🐙 GitHub: https://github.com/Nravitejareddy
-
----
-
-# ⭐ Project Status
-
-> ✅ **Live and actively maintained** — Dev Along is fully functional and continues to evolve with new collaboration features and platform improvements.
-
-
-> **Dev Along — Code Together. Learn Together. Build Together.**
