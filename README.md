@@ -90,3 +90,56 @@ style TSB fill:#3178C6,color:#fff,stroke:#1e3a8a,stroke-width:2px
 linkStyle 0 stroke:#2563eb,stroke-width:2px
 linkStyle 1 stroke:#16a34a,stroke-width:2px
 linkStyle 2 stroke:#f97316,stroke-width:2px
+```
+The application is built with **Next.js** and deployed on **Vercel**. Real-time collaboration is powered by **Yjs**, using **y-supabase** to synchronize editor state, cursors, and document changes through **Supabase Realtime**.
+
+Code execution is handled through a Next.js API route that securely proxies execution requests to the **Runlet** service. The project initially used **JDoodle** before migrating to **Runlet**, providing complete control over the execution environment while exploring secure remote code execution.
+
+---
+
+### ✨ Key Highlights
+
+- 🚀 Instant collaborative coding
+- 👥 Real-time multiplayer editor
+- ✍ Live cursor synchronization
+- ▶ Execute code directly from the browser
+- 🔗 Share coding rooms with a single link
+- 💻 Supports Python, JavaScript, C++, and Java
+- ⚡ Powered by Next.js, Yjs, Supabase, and Runlet
+- 🔒 No authentication required
+
+---
+
+### 🛠 Technology Stack
+
+| Category | Technology |
+|----------|------------|
+| Framework | Next.js |
+| Language | TypeScript |
+| UI | React |
+| Code Editor | Monaco Editor |
+| Collaboration | Yjs |
+| Sync Provider | y-supabase |
+| Backend | Next.js API Routes |
+| Database & Realtime | Supabase |
+| Code Execution | Runlet |
+| Deployment | Vercel |
+
+---
+
+### 📂 Repository Structure
+
+```text
+.
+├── app/
+├── components/
+├── hooks/
+├── lib/
+├── public/
+│   └── architecture.png
+├── styles/
+├── types/
+├── utils/
+├── package.json
+└── README.md
+```
